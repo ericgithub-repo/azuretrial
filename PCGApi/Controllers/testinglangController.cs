@@ -19,6 +19,7 @@ namespace testinglang.Controllers
             repo = new RepositoryCore.PcgTrialRepository();
             var result = repo.GetPcgTrial();
 
+            //trial only
             return result;
         }
 
