@@ -12,20 +12,30 @@ namespace RepositoryCore
         private string connection = ConfigurationManager.ConnectionStrings["pcgtrialConnection"].ConnectionString;
         private SqlConnection con;
         public List<string> GetPcgTrial() {
-            con = new SqlConnection(connection);
-            
-            DataSet ds = new DataSet();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from TrialTable", con);
-            sqlDataAdapter.Fill(ds);
-
             List<string> ret = new List<string>();
 
-            foreach (DataRow x in ds.Tables[0].Rows)
+            try
             {
-                ret.Add(x[1].ToString());
-            }
+                con = new SqlConnection(connection);
 
-            return ret;
+                DataSet ds = new DataSet();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from TrialTable", con);
+                sqlDataAdapter.Fill(ds);
+
+                
+
+                foreach (DataRow x in ds.Tables[0].Rows)
+                {
+                    ret.Add(x[1].ToString());
+                }
+
+                return ret;
+            }
+            catch (Exception err)
+            {
+                ret.Add(err.Message);
+            }
+            
         }
     }
 }
