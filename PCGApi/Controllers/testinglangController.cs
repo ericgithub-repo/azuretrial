@@ -11,16 +11,18 @@ namespace testinglang.Controllers
     [ApiController]
     public class testinglangController : ControllerBase
     {
-        private RepositoryCore.PcgTrialRepository repo;
+        //private RepositoryCore.PcgTrialRepository repo;
         // GET: api/PCG
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            repo = new RepositoryCore.PcgTrialRepository();
-            var result = repo.GetPcgTrial();
+            //repo = new RepositoryCore.PcgTrialRepository();
+            //var result = repo.GetPcgTrial();
+
+            string[] result = { "yeah", "you"};
 
             //trial only
-            return result;
+            return result.AsEnumerable();
         }
 
         // GET: api/PCG/5

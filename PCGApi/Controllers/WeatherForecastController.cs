@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 namespace PCGApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("pcg/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
