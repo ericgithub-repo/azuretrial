@@ -31,7 +31,7 @@ namespace testinglang.Controllers
         [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
-            return "value";
+            return "value" + id.ToString();
         }
 
         // POST: api/PCG

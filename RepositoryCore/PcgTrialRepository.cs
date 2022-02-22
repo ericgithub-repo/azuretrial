@@ -29,13 +29,12 @@ namespace RepositoryCore
                     ret.Add(x[1].ToString());
                 }
 
-                return ret;
             }
             catch (Exception err)
             {
                 ret.Add(err.Message);
             }
-            
+            return ret;
         }
     }
 }
